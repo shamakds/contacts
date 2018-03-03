@@ -1,0 +1,105 @@
+.z-contact {
+  .z-banner {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 400px;
+    padding: 20px 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    box-shadow: 0 3px 4px rgba(0,0,0,.2);
+
+    .z-full-name {
+      letter-spacing: 2px;
+      font-family: sans-serif;
+
+      span {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    .z-created-on {
+      font-size: 0.8em;
+      text-align: center;
+      color: #9a9a9a;
+      margin-top: 5px;
+    }
+
+    .z-edit-button {
+      position: absolute;
+      bottom: -30px;
+      right: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      background-color: #656565;
+      color: white;
+      border-radius: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 2px 6px #807d7d;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+      user-select: none;
+
+      &:hover {
+        background-color: #ec3737;
+      }
+
+      &:active {
+        background-color: #ca4040;
+      }
+    }
+  }
+
+  .z-contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+
+    .z-contact-info-item {
+      flex: 0 0 33.33%;
+      font-size: 20px;
+
+      .z-label {
+        margin: 0;
+        font-size: 0.6em;
+        color: #7e7e7e;
+        text-transform: uppercase;
+      }
+
+      .z-value {
+        margin: 0 0 20px;
+
+        &.no-value {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .capital-letter::first-letter {
+    font-size: 2em;
+    color: red;
+  }
+}
+
+@media (max-width: 768px) {
+  .z-contact {
+    .z-contact-info {
+      .z-contact-info-item {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

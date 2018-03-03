@@ -1,0 +1,91 @@
+.z-dashboard {
+  display: flex;
+
+  .z-screen-switch-btn {
+    display: none;
+  }
+
+  .z-list {
+    position: relative;
+    flex: 0 0 260px;
+    height: 100vh;
+    width: auto;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    background: white;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    input[type="text"] {
+      width: 100%;
+      border: 0;
+      margin-bottom: 20px;
+      padding: 4px 6px;
+      box-sizing: border-box;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+      &:active, &:focus {
+        outline: 0;
+        box-shadow: 0 3px 6px rgba(71, 153, 255, 0.5);
+      }
+    }
+
+    .z-contact-item {
+      padding: 8px 8px;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+
+      &:hover {
+        background-color: #ececec;
+      }
+
+      &.selected {
+        background-color: #e1efb7;
+      }
+    }
+
+    .z-contact-add-btn {
+      padding: 8px 8px;
+      text-align: center;
+      background-color: #bdd6de;
+      cursor: pointer;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .z-dashboard-content {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .z-dashboard {
+    max-height: 100vh;
+    overflow: auto;
+
+    .z-screen-switch-btn {
+      position: fixed;
+      right: 10px;
+      top: 5px;
+      display: block;
+      font-size: 24px;
+      z-index: 2;
+    }
+
+    .z-list {
+      flex: 0 0 90%;
+    }
+    .z-dashboard-content,
+    .z-contact,
+    .z-contact-form {
+      flex: 0 0 100%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.z-form-group-item {
+  .z-form-image-drop-zone {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: 1px dashed rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e8e8e8;
+    }
+  }
+
+  .z-form-image-preview {
+    max-height: 100px;
+    max-width: 100px;
+  }
+}

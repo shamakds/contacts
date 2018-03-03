@@ -1,0 +1,65 @@
+.z-form-group-item {
+  position: relative;
+  flex: 0 0 50%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 0 30px 0 20px;
+  box-sizing: border-box;
+
+  .z-label {
+    display: block;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    border: 0;
+    margin-bottom: 20px;
+    padding: 8px 8px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+    &:active, &:focus {
+      outline: 0;
+      box-shadow: 0 3px 6px rgba(71, 153, 255, 0.5);
+    }
+  }
+
+  .z-form-group-item-delete-btn {
+    position: absolute;
+    display: none;
+    top: 50%;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    line-height: 20px;
+    text-align: center;
+    color: #d02d2d;
+    cursor: pointer;
+  }
+
+  .z-form-group-item-undo-btn {
+    width: 100%;
+    padding: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #b3ca6e;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#b3ca6e, 10%);
+    }
+    &:active {
+      background-color: lighten(#b3ca6e, 10%);
+    }
+  }
+
+  &:hover {
+    .z-form-group-item-delete-btn {
+      display: inline-block;
+    }
+  }
+}

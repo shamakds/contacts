@@ -1,0 +1,91 @@
+$defaultButtonColor: white;
+$defaultButtonBgColor: grey;
+$submitButtonBgColor: #4daac7;
+$resetButtonBgColor: #df913e;
+$deleteButtonBgColor: #e04545;
+
+.z-contact-form {
+  margin-top: 40px;
+
+  .z-form-group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .z-form-controls {
+    padding: 0 20px;
+
+    button {
+      margin-bottom: 10px;
+      padding: 4px 16px;
+      background: lighten($defaultButtonBgColor, 3%);
+      border: 1px solid darken($defaultButtonBgColor, 4%);
+      box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+      color: $defaultButtonColor;
+      font-weight: 900;
+      letter-spacing: 1px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      &:hover {
+        background: darken($defaultButtonBgColor, 1.5%);
+      }
+
+      &:active {
+        background: darken($defaultButtonBgColor, 5%);
+        border: 1px solid rgba(#000, .05);
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        color: darken($defaultButtonColor, 18%);
+        text-decoration: none;
+      }
+
+      &:active, &:focus {
+        outline: 0;
+      }
+
+      &[type="submit"] {
+        background: lighten($submitButtonBgColor, 3%);
+        border: 1px solid darken($submitButtonBgColor, 4%);
+
+        &:hover {
+          background: darken($submitButtonBgColor, 1.5%);
+        }
+
+        &:active {
+          background: darken($submitButtonBgColor, 5%);
+        }
+      }
+
+      &[type="delete"] {
+        background: lighten($deleteButtonBgColor, 3%);
+        border: 1px solid darken($deleteButtonBgColor, 4%);
+
+        &:hover {
+          background: darken($deleteButtonBgColor, 1.5%);
+        }
+
+        &:active {
+          background: darken($deleteButtonBgColor, 5%);
+        }
+      }
+
+      &[type="reset"] {
+        background: lighten($resetButtonBgColor, 3%);
+        border: 1px solid darken($resetButtonBgColor, 4%);
+
+        &:hover {
+          background: darken($resetButtonBgColor, 1.5%);
+        }
+
+        &:active {
+          background: darken($resetButtonBgColor, 5%);
+        }
+      }
+    }
+  }
+}
