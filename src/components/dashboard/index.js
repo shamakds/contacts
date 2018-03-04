@@ -42,7 +42,8 @@ export default class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedContactID: null
+            selectedContactID: null,
+            showList: true
         };
     }
 
@@ -57,11 +58,6 @@ export default class Dashboard extends Component {
         const { addContact } = this.props;
 
         addContact();
-    };
-
-    switchScreen = () => {
-        const { scrollX, scrollY, outerWidth } = window;
-        window.scrollTo(outerWidth, scrollY);
     };
 
     renderSelectedContact = () => {
@@ -84,19 +80,32 @@ export default class Dashboard extends Component {
         return <ContactEditor item={selectedContact}/>;
     };
 
+    expandList = (show) => {
+        const { showList } = this.state;
+
+        this.setState({
+            showList: show || !showList
+        });
+    };
+
     renderContactsList = () => {
         const {contacts, selectedContact} = this.props;
+        const { showList } = this.state;
 
-        return (<div className="z-list">
+        return (<div className={`z-list${showList ? " active" : ""}`}>
             <div className="z-search-wrapper">
                 <input autoFocus disabled title="Sorry, this feature is not allowed in trial version" type="text"
                        placeholder="Search"/>
+            </div>
+            <div className="z-toggle-btn" onClick={e => this.expandList()}>
+                <em className="fas fa-bars" />
             </div>
             {
                 contacts.map((contact) => {
                     return (<ContactListItem
                         key={contact.id}
                         {...contact}
+                        onSelect={() => this.expandList(false)}
                         selected={selectedContact && selectedContact.id === contact.id}
                     />);
                 })

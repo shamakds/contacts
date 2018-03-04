@@ -16,6 +16,7 @@ export default class ContactListItem extends Component {
   static displayName = "ContactListItem";
   static propTypes = {
       selectContact: PropTypes.func.isRequired,
+      onSelect: PropTypes.func.isRequired,
       selected: PropTypes.bool
   };
   static defaultProps = {
@@ -27,7 +28,8 @@ export default class ContactListItem extends Component {
     this.state = {};
   }
   onSelect= () => {
-    const { selectContact, id } = this.props;
+    const { selectContact, onSelect, id } = this.props;
+    onSelect();
     selectContact(id);
   };
   render() {

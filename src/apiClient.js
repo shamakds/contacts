@@ -11,7 +11,7 @@ export const contact = {
     get: () => {
         let resolve; let reject;
         const promise = getPromise((onRes) => {resolve = onRes}, (onRej) => {reject = onRej});
-        const data = JSON.parse(localStorage.getItem(StorageItemKey));
+        const data = JSON.parse(localStorage.getItem(StorageItemKey)) || [];
         resolve && resolve(data);
 
         return promise;
@@ -19,7 +19,7 @@ export const contact = {
     post: (props) => {
         let resolve; let reject;
         const promise = getPromise((onRes) => {resolve = onRes}, (onRej) => {reject = onRej});
-        let records = JSON.parse(localStorage.getItem(StorageItemKey));
+        let records = JSON.parse(localStorage.getItem(StorageItemKey)) || [];
         const contact = {
             ...props,
             createdOn: Date.now()
@@ -36,7 +36,7 @@ export const contact = {
     delete: (id) => {
         let resolve; let reject;
         const promise = getPromise((onRes) => {resolve = onRes}, (onRej) => {reject = onRej});
-        let records = JSON.parse(localStorage.getItem(StorageItemKey));
+        let records = JSON.parse(localStorage.getItem(StorageItemKey)) || [];
         const contact = records.find(o => o.id === id);
         const index = records.indexOf(contact);
 
@@ -52,7 +52,7 @@ export const contact = {
     update: (props) => {
         let resolve; let reject;
         const promise = getPromise((onRes) => {resolve = onRes}, (onRej) => {reject = onRej});
-        let records = JSON.parse(localStorage.getItem(StorageItemKey));
+        let records = JSON.parse(localStorage.getItem(StorageItemKey)) || [];
         const contact = records.find(o => o.id === props.id);
         const index = records.indexOf(contact);
         const updatedContact = {
