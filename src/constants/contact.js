@@ -1,12 +1,12 @@
 export const DEFAULT_CONTACT_PROPS = {
     info: {
-        image: {label: "Image", value: null},
-        name: {label: "Name", value: null},
-        surname: {label: "Surname", value: null},
-        email: {label: "Email", value: null},
-        country: {label: "Country", value: null},
-        address: {label: "Address", value: null},
-        zipCode: {label: "Zip Code", value: null},
+        image: {label: "Image", value: ""},
+        name: {label: "Name", value: ""},
+        surname: {label: "Surname", value: ""},
+        email: {label: "Email", value: ""},
+        country: {label: "Country", value: ""},
+        address: {label: "Address", value: ""},
+        zipCode: {label: "Zip Code", value: ""},
     }
 };
 

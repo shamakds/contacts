@@ -16,7 +16,7 @@ export default class Z extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: props.value,
+            value: props.value || "",
             pending: false,
             deleted: false,
         };
@@ -24,7 +24,7 @@ export default class Z extends Component {
 
     componentWillReceiveProps(newProps) {
         this.setState({
-            value: newProps.value
+            value: newProps.value || ""
         });
     }
 
