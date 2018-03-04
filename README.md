@@ -4,5 +4,5 @@
 * run `npm install`
 * run `npm install webpack@3.8.1 -g`
 * run `webpack`
-* run `node server.js`
+* run `npm run server` or `node server.js`
 * go to url `localhost:5060`
