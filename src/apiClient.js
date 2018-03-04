@@ -1,4 +1,4 @@
-const StorageItemKey = "CONTACTS";
+const StorageItemKey = 'CONTACTS';
 
 function getPromise(setRes, setRej) {
     return new Promise((onRes, onRej) => {

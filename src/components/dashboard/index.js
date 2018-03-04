@@ -1,16 +1,15 @@
-import React, {Component, PropTypes} from "react";
-import {connect} from "react-redux";
-import {contact} from "../../apiClient";
+import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {contact} from '../../apiClient';
 import {bindActionCreators} from "redux";
-import {loadingContacts, loadContacts, addContact} from "../../store/actions/contactActions";
-import ContactListItem from "../contactListItem";
-import ContactPreview from "../contactPreview";
-import ContactEditor from "../contactEditor";
-
-require("./style.scss");
+import {loadingContacts, loadContacts, addContact} from '../../store/actions/contactActions';
+import ContactListItem from '../contactListItem';
+import ContactPreview from '../contactPreview';
+import ContactEditor from '../contactEditor';
+import './style.scss';
 
 function mapStateToProps(globalState, ownProps) {
-    const { contacts: { editMode = false, records, selectedContact } } = globalState;
+    const {contacts: {editMode = false, records, selectedContact}} = globalState;
 
     return {
         ...ownProps,
@@ -55,8 +54,8 @@ export default class Dashboard extends Component {
     }
 
     addContact = () => {
-        const { addContact } = this.props;
-
+        const {addContact} = this.props;
+        this.expandList(false);
         addContact();
     };
 
@@ -77,11 +76,11 @@ export default class Dashboard extends Component {
             return null;
         }
 
-        return <ContactEditor item={selectedContact}/>;
+        return <ContactEditor />;
     };
 
     expandList = (show) => {
-        const { showList } = this.state;
+        const {showList} = this.state;
 
         this.setState({
             showList: show || !showList
@@ -90,7 +89,7 @@ export default class Dashboard extends Component {
 
     renderContactsList = () => {
         const {contacts, selectedContact} = this.props;
-        const { showList } = this.state;
+        const {showList} = this.state;
 
         return (<div className={`z-list${showList ? " active" : ""}`}>
             <div className="z-search-wrapper">
@@ -98,7 +97,7 @@ export default class Dashboard extends Component {
                        placeholder="Search"/>
             </div>
             <div className="z-toggle-btn" onClick={e => this.expandList()}>
-                <em className="fas fa-bars" />
+                <em className="fas fa-bars"/>
             </div>
             {
                 contacts.map((contact) => {
@@ -119,7 +118,7 @@ export default class Dashboard extends Component {
     render() {
         const {editMode, selectedContact} = this.props;
         return (<div className="z-dashboard">
-            { this.renderContactsList() }
+            {this.renderContactsList()}
             {
                 selectedContact ? <div className="z-dashboard-content">{
                     editMode ? this.renderEditContact() : this.renderSelectedContact()

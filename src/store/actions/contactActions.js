@@ -1,5 +1,5 @@
 import * as types from '../../constants/ActionTypes';
-import { DEFAULT_CONTACT_PROPS } from "../../constants/contact";
+import {DEFAULT_CONTACT_PROPS} from '../../constants/contact';
 
 export function loadingContacts() {
     return {
