@@ -1,4 +1,5 @@
 # contacts
+![Preview](https://raw.githubusercontent.com/shamakds/resume/master/src/preview.png)
 
 ## How to run app
 * run `npm install -D`
